@@ -85,3 +85,13 @@ async def translate_text_endpoint(payload: Message):
         return {"original": original_text, "translated": translated_text}
     except Exception as e:
         return {"original": original_text, "translated": original_text, "error": str(e)}
+
+app = FastAPI(title="Chum Buddies")
+
+@app.get("/")
+def home():
+    return {"status": "Chum Buddies backend is running"}
+
+class Message(BaseModel):
+    text: str
+    target_lang: str
