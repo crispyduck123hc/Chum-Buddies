@@ -86,7 +86,7 @@ function LandingPage() {
 
       // 4. Send to Python Backend for Jaccard Matching
       try {
-        const response = await fetch("http://localhost:8000/api/match", {
+        const response = await fetch("https://chum-buddies-backend.onrender.com/api/match", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
